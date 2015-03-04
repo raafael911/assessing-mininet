@@ -248,8 +248,8 @@ for n in node_set:
 
         #node name
         if d.attrib['key'] == node_label_name_in_graphml:
-            #strip all whitespace from names so they can be used as id's
-            node_name_value = re.sub(r'\s+', '', d.text)
+            #strip all non alphanumeric characters from names so they can be used as id's and variable names
+            node_name_value = re.sub(r'\W', '', d.text)
         #longitude data
         if d.attrib['key'] == node_longitude_name_in_graphml:
             node_longitude_value = d.text
